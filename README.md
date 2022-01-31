@@ -94,8 +94,8 @@ L'algorithme de détection de communauté de Louvain a été proposé à l'origi
 
 L'algorithme tente de maximiser son objectif en répétant ces deux phases :
 
-    1. Il affecte chaque nœud du graphe à une seule communauté. Pour chaque arête reliant le nœud u et le nœud v, l'algorithme vérifie si la fusion des communautés de u et v augmente l'objectif, et si oui, il effectue la fusion.
-    2. L'algorithme construit un nouveau graphe, où chaque communauté est représentée par un seul nœud, et le poids attribué à l'arête entre les communautés est la somme des poids de toutes les arêtes entre les nœuds fusionnés de chaque communauté.
+  * Il affecte chaque nœud du graphe à une seule communauté. Pour chaque arête reliant le nœud u et le nœud v, l'algorithme vérifie si la fusion des communautés de u et v augmente l'objectif, et si oui, il effectue la fusion.
+  * L'algorithme construit un nouveau graphe, où chaque communauté est représentée par un seul nœud, et le poids attribué à l'arête entre les communautés est la somme des poids de toutes les arêtes entre les nœuds fusionnés de chaque communauté.
 
 L'algorithme s'arrête lorsqu'il n'y a aucune étape qui augmente l'objectif. La sortie est un graphe induit, où les nœuds représentent les communautés.
 
