@@ -158,9 +158,23 @@ L'algorithme s'arrête lorsqu'il n'y a aucune étape qui augmente l'objectif. La
   <p style=" text-align: center" >Sous-réseau d'interactions sociales sur Twitter, usant de la méthode louvain pour détecter des "communautés"</p>
 </p>
 
-2.  Algorithme 2
-3.  Algorithme 3
-4.  Algorithme 4
+2.  Leiden Community Detection
+
+La détection de communautés est souvent utilisée pour comprendre la structure des grands réseaux complexes. L’un des algorithmes les plus populaires pour découvrir la structure de la communauté est le soi-disant algorithme de Louvain. Traag et al. ont montré que cet algorithme a un défaut majeur qui est largement passé inaperçu jusqu’à présent : l’algorithme de Louvain peut produire des communautés arbitrairement mal connectées. Dans le pire des cas, les communautés peuvent même être déconnectées, en particulier lors de l’exécution itérative de l’algorithme. 
+
+Pour résoudre ce problème, Traag et al. ont introduit l’algorithme de Leiden. Ils ont prouvé que l’algorithme de Leiden produit des communautés qui sont garanties d’être connectées. En outre, ils ont prouvé que, lorsque l’algorithme de Leiden est appliqué de façon itérative, il converge vers une partition dans laquelle tous les sous-ensembles de toutes les communautés sont assignés localement de façon optimale. De plus, en s’appuyant sur une approche de déplacement local rapide, l’algorithme de Leiden fonctionne plus rapidement que l’algorithme de Louvain et découvre de meilleures partitions, en plus de fournir des garanties explicites.
+
+<p align="center">
+  <img src="./images/image5.png" >
+  <p style=" text-align: center" >   Algorithme de Leiden : L’algorithme de Leiden part d’une partition simple (a). L’algorithme déplace les noeuds individuels d’une communauté à une autre pour trouver une partition (b), qui est ensuite affinée (c). Un réseau d’agrégats (d) est créé sur la base de la partition raffinée, en utilisant la partition non définie pour créer une partition initiale pour le réseau d’agrégats. Par exemple, la communauté rouge en b) est raffinée en deux sous-communautés en c), qui, après agrégation, deviennent deux nœuds distincts en d), tous deux appartenant à la même communauté. L’algorithme déplace ensuite les nœuds individuels dans le réseau d’agrégats (e). Dans ce cas, le raffinement ne modifie pas la partition (f). Ces étapes sont répétées jusqu’à ce qu’aucune autre amélioration ne soit apportée.</p>
+</p>
+
+
+3.  Demon : Democratic Estimate of the Modular Organisation of a Network 
+
+La détection de communautés dans des réseaux complexes est un problème intéressant avec un certain nombre d’applications, en particulier dans la tâche d’extraction de connaissances dans les réseaux sociaux et d’information. Cependant, de nombreux grands réseaux manquent souvent d’une organisation communautaire particulière au niveau mondial. Dans ces cas, les algorithmes traditionnels de partitionnement graphique ne laissent pas émerger les connaissances latentes intégrées dans la structure modulaire, car ils imposent une vision globale descendante d’un réseau.
+
+Demon est proposé pour remédier à ce problème, cet algorithme repose sur une approche simple et locale de la découverte de la communauté, capable de dévoiler l’organisation modulaire de réseaux réellement complexes. Ceci est réalisé en laissant démocratiquement chaque noeud voter pour les communautés qu’il voit l’entourer dans sa vision limitée du système global, c.-à-d. son voisinage ego, à l’aide d’un algorithme de propagation d’étiquette ; enfin, les communautés locales sont fusionnées dans une collection globale.
 
 
 ## Interet de CDLib
