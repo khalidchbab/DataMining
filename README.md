@@ -1,25 +1,5 @@
 <div id="top"></div>
-<!--
-*** Thanks for checking out the Best-README-Template. If you have a suggestion
-*** that would make this better, please fork the repo and create a pull request
-*** or simply open an issue with the tag "enhancement".
-*** Don't forget to give the project a star!
-*** Thanks again! Now go create something AMAZING! :D
--->
 
-
-
-<!-- PROJECT SHIELDS -->
-<!--
-*** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
-*** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
-
-
-<!-- PROJECT LOGO -->
 <br />
 <div align="center">
   <a>
@@ -31,14 +11,9 @@
   <p align="center">
     CDlib - Community Discovery Library
     <br />
-    <!-- <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a> -->
     <br />
     <br />
-    <!-- <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
-    ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a> -->
+   
   </p>
 </div>
 
@@ -49,21 +24,19 @@
   <summary>Sommaire</summary>
   <ol>
     <li>
-      <a href="#about-the-project">Introduction</a>
+      <a href="#introduction">Introduction</a>
     </li>
     <li>
-      <a href="#getting-started">Community Detection</a>
+      <a href="#community-detection">Community Detection</a>
     </li>
-    <li><a href="#usage">Algorithmes de résolution</a><ul>
-        <li><a href="#prerequisites">Algorithme 1</a></li>
-        <li><a href="#installation">Algorithme 2</a></li>
+    <li><a href="#algorithmes-de-résolution">Algorithmes de résolution</a><ul>
+        <li><a href="#prerequisites">Louvain Community Detection</a></li>
+        <li><a href="#leiden-community-detection">Leiden Community Detection</a></li>
+        <li><a href="#demon">Demon : Democratic Estimate of the Modular Organisation of a Network </a></li>
       </ul>
     </li>
-    <li><a href="#roadmap">Intérêt de CDLib</a></li>
-    <!-- <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li> -->
+    <li><a href="#interet-de-cdlib">Intérêt de CDLib</a></li>
+    
   </ol>
 </details>
 
@@ -72,7 +45,6 @@
 Nous avons hébergé notre tuto sur Github Pages : [Lien](https://khalidchbab.github.io/DataMining/ "Tuto")
 
 
-<!-- ABOUT THE PROJECT -->
 ## Introduction
 
 
@@ -80,7 +52,6 @@ Beaucoup d'entre vous connaissent les réseaux, n'est-ce pas ? Vous utilisez peu
 <br/>
 <p align="center">
   <img src="./images/image2.webp" width="450" >
-  <!-- <p style=" text-align: center" >Figure 1 : Graphe de connexion</p> -->
 </p>
 M. Girvan et M. E. J. Newman sont deux chercheurs réputés dans le domaine de la détection des communautés. Dans l'une de leurs recherches, ils ont mis en évidence la structure-propriété des communautés en utilisant les réseaux sociaux et les réseaux biologiques. Selon eux, les nœuds des réseaux sont étroitement connectés en groupes tricotés au sein des communautés et faiblement connectés entre les communautés.
 
@@ -89,30 +60,7 @@ M. Girvan et M. E. J. Newman sont deux chercheurs réputés dans le domaine de l
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
-
-<!-- ### Built With
-
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
-
-* [Next.js](https://nextjs.org/)
-* [React.js](https://reactjs.org/)
-* [Vue.js](https://vuejs.org/)
-* [Angular](https://angular.io/)
-* [Svelte](https://svelte.dev/)
-* [Laravel](https://laravel.com)
-* [Bootstrap](https://getbootstrap.com)
-* [JQuery](https://jquery.com)
-
-<p align="right">(<a href="#top">back to top</a>)</p> -->
-
-
-
-<!-- GETTING STARTED -->
 ## Community Detection
-
-<!-- Lors de l'analyse de différents réseaux, il peut être important de découvrir des communautés en leur sein. Les techniques de détection de communautés sont utiles pour :
-*  Découvrir des personnes ayant des intérêts communs et les maintenir étroitement connectées.
-*  Détecter les groupes ayant des propriétés similaires et extraire des groupes pour diverses raisons. Par exemple, cette technique peut être utilisée pour découvrir des groupes manipulateurs dans un réseau social ou un marché boursier. -->
 
 La détection des communautés dans un réseau est l'une des tâches les plus importantes de l'analyse de réseau. Dans un réseau à grande échelle, tel qu'un réseau social en ligne, nous pouvons avoir des millions de nœuds et d'arêtes. Détecter des communautés dans de tels réseaux devient une tâche herculéenne.
 
@@ -120,7 +68,7 @@ Par conséquent, nous avons besoin des algorithmes de détection de communautés
 
 <p align="center">
   <img src="./images/image3.png" width="250" >
-  <!-- <p style=" text-align: center" >Figure 1 : Graphe de connexion</p> -->
+
 </p>
 
 Il existe principalement deux types de méthodes pour détecter les communautés dans les graphes :
@@ -135,13 +83,11 @@ Dans les méthodes agglomératives, nous commençons par un graphe vide composé
 Dans les méthodes de division, nous procédons dans l'autre sens. On commence avec le graphe complet et on enlève les arêtes de manière itérative. L'arête ayant le poids le plus élevé est retirée en premier. À chaque étape, le calcul du poids des arêtes est répété, car le poids des arêtes restantes change après la suppression d'une arête. Après un certain nombre d'étapes, nous obtenons des groupes de nœuds densément connectés.
 
 
-<!-- USAGE EXAMPLES -->
 ## Algorithmes de résolution
 
 Il existe de nombreuses techniques différentes proposées dans le domaine de la détection de communautés. Quatre algorithmes populaires de détection de communautés sont expliqués ci-dessous. Tous ces algorithmes peuvent être trouvés dans la bibliothèque python cdlib.
 
 
-<!-- ROADMAP -->
 1.  Louvain Community Detection
 
 L'algorithme de détection de communauté de Louvain a été proposé à l'origine en 2008 comme une méthode rapide de dépliage de communauté pour les grands réseaux. Cette approche est basée sur la modularité, qui tente de maximiser la différence entre le nombre réel d'arêtes dans une communauté et le nombre attendu d'arêtes dans la communauté. 
@@ -177,7 +123,7 @@ La détection de communautés dans des réseaux complexes est un problème inté
 Demon est proposé pour remédier à ce problème, cet algorithme repose sur une approche simple et locale de la découverte de la communauté, capable de dévoiler l’organisation modulaire de réseaux réellement complexes. Ceci est réalisé en laissant démocratiquement chaque noeud voter pour les communautés qu’il voit l’entourer dans sa vision limitée du système global, c.-à-d. son voisinage ego, à l’aide d’un algorithme de propagation d’étiquette ; enfin, les communautés locales sont fusionnées dans une collection globale.
 
 
-## Interet de CDLib
+## Intérêt de CDLib
 
 Bien que de nombreuses méthodes et algorithmes aient été proposés pour résoudre un problème de "Community Detection", ainsi que des questions connexes telles que leur évaluation et leur comparaison, peu d'entre eux sont intégrés dans un cadre logiciel commun, ce qui rend leur utilisation, leur étude et leur comparaison difficiles et fastidieuses.
 
@@ -211,17 +157,3 @@ Les principales caractéristiques de la bibliothèque sont les suivantes.
 * Implémentation d'une variété de scores et de fonctions de qualité pour évaluer la qualité des communautés individuelles et des regroupements entiers.
 
 * Des outils de visualisation pour comparer et analyser les clusters obtenus par une ou plusieurs méthodes.
-
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
-[contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
-[forks-url]: https://github.com/othneildrew/Best-README-Template/network/members
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
-[stars-url]: https://github.com/othneildrew/Best-README-Template/stargazers
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
-[issues-url]: https://github.com/othneildrew/Best-README-Template/issues
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
-[license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/othneildrew
-[product-screenshot]: images/screenshot.png
