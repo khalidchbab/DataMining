@@ -30,12 +30,12 @@
       <a href="#community-detection">Community Detection</a>
     </li>
     <li><a href="#algorithmes-de-résolution">Algorithmes de résolution</a><ul>
-        <li><a href="#prerequisites">Louvain Community Detection</a></li>
+        <li><a href="#louvain-community-detection">Louvain Community Detection</a></li>
         <li><a href="#leiden-community-detection">Leiden Community Detection</a></li>
         <li><a href="#demon">Demon : Democratic Estimate of the Modular Organisation of a Network </a></li>
       </ul>
     </li>
-    <li><a href="#interet-de-cdlib">Intérêt de CDLib</a></li>
+    <li><a href="#intéret-de-CDLib">Intérêt de CDLib</a></li>
     
   </ol>
 </details>
