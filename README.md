@@ -69,7 +69,7 @@
 
 ## Tuto
 
-Nous avons heberger notre tuto sur github pages : [Lien](https://khalidchbab.github.io/DataMining/ "Tuto")
+Nous avons hébergé notre tuto sur Github Pages : [Lien](https://khalidchbab.github.io/DataMining/ "Tuto")
 
 
 <!-- ABOUT THE PROJECT -->
